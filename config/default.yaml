@@ -1,0 +1,14 @@
+app: League Tournament
+version: '1.00'
+
+server:
+  port: 3000           # main service port
+  useCors: false       # enable CORS support
+
+aws:
+  accessKeyId: AKIAITPPTQUFTKABHDIQ
+  secretAccessKey: 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
+  region: us-east-1
+
+logger:
+  level: debug
