@@ -11,9 +11,10 @@ var TeamService = require('../../lib/service').Team;
 describe('TeamService', function() {
   this.timeout(60 * 1000);
 
-  it.only('get/create/remove', function(done) {
+  var tournamentId = '2015/2016';
+
+  it('get/create/remove', function(done) {
     var teamName = 'Manchester United X';
-    var tournamentId = '2015/2016';
     var teamId = tournamentId + '-' + teamName;
 
     async.series([
@@ -54,7 +55,38 @@ describe('TeamService', function() {
     ], done);
   });
 
-  it('query', function(done) {
+  it.only('query', function(done) {
+    var tournamentId = '2015/2016';
+    var teams = [{
+      tournamentId: tournamentId,
+      name: 'team1'
+    }, {
+      tournamentId: tournamentId,
+      name: 'team2'
+    }];
 
+    var savedTeams = [];
+
+    async.series([
+      function setup(cb) {
+        async.eachSeries(teams, function(team, icb) {
+          TeamService.upsert(team, icb);
+        }, cb);
+      },
+
+      function query(cb) {
+        TeamService.query({tournamentId: tournamentId}, function(err, result) {
+          savedTeams = result.items;
+          assert(result.items.length === result.items.length);
+          cb(err);
+        });
+      },
+
+      function clear(cb) {
+        async.eachSeries(savedTeams, function(team, icb) {
+          TeamService.remove(team.id, icb);
+        }, cb);
+      }
+    ], done);
   });
 });
