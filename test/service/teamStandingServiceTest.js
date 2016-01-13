@@ -6,9 +6,9 @@ var assert = require('assert');
 var async = require('async');
 var _ = require('lodash');
 
-var TeamService = require('../../lib/service').Team;
+var TeamStandingService = require('../../lib/service').TeamStanding;
 
-describe('TeamService', function() {
+describe('TeamStandingService', function() {
   this.timeout(60 * 1000);
 
   var tournamentId = '2015/2016';
@@ -19,14 +19,14 @@ describe('TeamService', function() {
 
     async.series([
       function get1(cb) {
-        TeamService.get(teamId, function(err, team) {
+        TeamStandingService.get(teamId, function(err, team) {
           assert(!team);
           cb(err);
         });
       },
 
       function create(cb) {
-        TeamService.upsert({
+        TeamStandingService.upsert({
           tournamentId: tournamentId,
           name: teamName
         }, function(err, team) {
@@ -36,18 +36,18 @@ describe('TeamService', function() {
       },
 
       function get2(cb) {
-        TeamService.get(teamId, function(err, team) {
+        TeamStandingService.get(teamId, function(err, team) {
           assert(team);
           cb(err);
         });
       },
 
       function remove(cb) {
-        TeamService.remove(teamId, cb);
+        TeamStandingService.remove(teamId, cb);
       },
 
       function get3(cb) {
-        TeamService.get(teamId, function(err, team) {
+        TeamStandingService.get(teamId, function(err, team) {
           assert(!team);
           cb(err);
         });
@@ -57,7 +57,7 @@ describe('TeamService', function() {
 
   it.only('query', function(done) {
     var tournamentId = '2015/2016';
-    var teams = [{
+    var standings = [{
       tournamentId: tournamentId,
       name: 'team1'
     }, {
@@ -69,13 +69,13 @@ describe('TeamService', function() {
 
     async.series([
       function setup(cb) {
-        async.eachSeries(teams, function(team, icb) {
-          TeamService.upsert(team, icb);
+        async.eachSeries(standings, function(team, icb) {
+          TeamStandingService.upsert(team, icb);
         }, cb);
       },
 
       function query(cb) {
-        TeamService.query({tournamentId: tournamentId}, function(err, result) {
+        TeamStandingService.query({tournamentId: tournamentId}, function(err, result) {
           savedTeams = result.items;
           assert(result.items.length === result.items.length);
           cb(err);
@@ -84,7 +84,7 @@ describe('TeamService', function() {
 
       function clear(cb) {
         async.eachSeries(savedTeams, function(team, icb) {
-          TeamService.remove(team.id, icb);
+          TeamStandingService.remove(team.id, icb);
         }, cb);
       }
     ], done);

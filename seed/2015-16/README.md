@@ -3,9 +3,8 @@
 ### Standings
 
 
-~~~
-                                        - Home -          - Away -            - Total -
-                                 Pld   W  D  L   F:A     W  D  L   F:A      F:A   +/-  Pts
+#                                        - Home -          - Away -            - Total -
+#                                 Pld   W  D  L   F:A     W  D  L   F:A      F:A   +/-  Pts
  1. Leicester City                13   4  1  1  13:11    4  3  0  15:9     28:20   +8   28
  2. Manchester United             13   4  2  0   9:1     4  1  2  10:8     19:9   +10   27
  3. Manchester City               13   5  0  2  20:9     3  2  1   7:4     27:13  +14   26
@@ -26,11 +25,11 @@
 18. Bournemouth                   13   1  2  3   5:9     1  1  5   9:18    14:27  -13    9
 19. Sunderland                    12   1  2  3   7:8     0  1  5   6:18    13:26  -13    6
 20. Aston Villa                   13   0  2  4   3:7     1  0  6   7:17    10:24  -14    5
-~~~
 
 
 
 
----
-Pld = Matches; W = Matches won; D = Matches drawn; L = Matches lost; F = Goals for; A = Goals against; +/- = Goal differencence; Pts = Points
+
+# ---
+# Pld = Matches; W = Matches won; D = Matches drawn; L = Matches lost; F = Goals for; A = Goals against; +/- = Goal differencence; Pts = Points
 
