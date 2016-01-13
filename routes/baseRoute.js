@@ -2,6 +2,7 @@
  * Created by ramon on 10/30/15.
  */
 "use strict";
+var _ = require('lodash');
 
 var helper = require('../lib/helper');
 var service = require('../lib/service');
