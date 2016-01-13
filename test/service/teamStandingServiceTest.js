@@ -55,7 +55,7 @@ describe('TeamStandingService', function() {
     ], done);
   });
 
-  it.only('query', function(done) {
+  it('query', function(done) {
     var tournamentId = '2015/2016';
     var standings = [{
       tournamentId: tournamentId,

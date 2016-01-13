@@ -10,8 +10,8 @@ nodejs, express, AWS DynamoDB
 
 ### Part 1 Public APIs
 
-- List of upcoming games: http://localhost:3000/api/game?tournamentId=2015-1016&startTime=20160112&op=1
-- List of past games: http://localhost:3000/api/game?tournamentId=2015-1016&startTime=20160112&op=-1
+- List of upcoming games: http://localhost:3000/api/game?tournamentId=2015-1016&startTime=20160112&op=gte
+- List of past games: http://localhost:3000/api/game?tournamentId=2015-1016&startTime=20160112&op=lt&isAscending=false
 - List of Teams: http://localhost:3000/api/teamStanding?tournamentId=2015-1016
 - Team Info: http://localhost:3000/api/teamStanding/Manchester United
 
