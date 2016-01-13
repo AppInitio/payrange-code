@@ -1,8 +1,3 @@
-/*
- * Created by Ramon on 5/21/14 10:56 AM.
- * Copyright (c) 2014 Duck Duck Moose. All rights reserved.
- */
-
 "use strict";
 
 var express = require('express');
