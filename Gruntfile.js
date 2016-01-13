@@ -15,7 +15,7 @@ module.exports = function (grunt) {
       },
 
       serverFiles: {
-        files: ['server/**/*.js', 'server/app.js', 'server/config/default.yaml', '!server/test/*'],
+        files: ['**/*.js', 'server/config/default.yaml', '!server/test/*'],
         tasks: ['express:dev'],
         options: {
           spawn: false
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
     // grunt-express-server
     express: {
       options: {
-        port: 3000,
+        port: 3001,
         background: true
       },
       dev: {

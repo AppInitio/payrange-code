@@ -10,16 +10,16 @@ nodejs, express, AWS DynamoDB
 
 ### Part 1 Public APIs
 
-- List of upcoming games: http://localhost:3000/api/game?tournamentId=2015-1016&startTime=20160112&op=gte
-- List of past games: http://localhost:3000/api/game?tournamentId=2015-1016&startTime=20160112&op=lt&isAscending=false
-- List of Teams: http://localhost:3000/api/teamStanding?tournamentId=2015-1016
-- Team Info: http://localhost:3000/api/teamStanding/Manchester United
+- List of upcoming games: http://localhost:3001/api/game?tournamentId=2015%2F2016&startTime=20160112&op=gte&limit=10
+- List of past games: http://localhost:3001/api/game?tournamentId=2015%2F2016&startTime=20160112&op=lt&isAscending=false&limit=10
+- List of Teams: http://localhost:3001/api/teamStanding?tournamentId=2015%2F2016
+- Team Info: http://localhost:3001/api/teamStanding/Manchester United
 
 ### Part 2 Admin APIs
 
-- Create/Update/Delete Tournament: http://localhost:3000/api/tournament/:id
-- Create/Update/Delete Games: http://localhost:3000/api/game/:id
-- Create/Update/Delete Teams: http://localhost:3000/api/teamStanding/:id
+- Create/Update/Delete Tournament: http://localhost:3001/api/tournament/:id
+- Create/Update/Delete Games: http://localhost:3001/api/game/:id
+- Create/Update/Delete Teams: http://localhost:3001/api/teamStanding/:id
 
 ### Part 3 Server Side Jobs
 

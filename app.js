@@ -9,10 +9,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
 var config = require('config');
-
-var responsor = require('./lib/responsor');
 var logger = require('./lib/logger').logger;
-var domain = require('./lib/middleware/domain');
 
 var app = express();
 
@@ -38,7 +35,7 @@ app.use(require('./lib/middleware/requestTime'));
 
 //app.use(require('./lib/security').authorize);
 
-app.use(api, require('./routes/api'));
+app.use('/api', require('./routes/api'));
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

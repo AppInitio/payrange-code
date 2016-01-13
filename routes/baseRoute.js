@@ -47,8 +47,19 @@ proto.find = function(req, res, next, done) {
     return me.service.get(id, done);
   }
 
-  me.service.query(helper.extractParamsFromReq(req), function(err, items, lastKey) {
-    return done(err, {items: items, lastKey: lastKey});
+  var options = helper.extractParamsFromReq(req);
+
+  options.isAscending = options.isAscending === 'false' ? false : true;
+
+  if (options.limit) {
+    options.limit = parseInt(options.limit);
+    if (isNaN(options.limit)) {
+      delete options.limit;
+    }
+  }
+
+  me.service.query(options, function(err, result) {
+    return done(err, result);
   });
 };
 
