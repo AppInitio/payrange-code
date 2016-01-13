@@ -17,9 +17,9 @@ nodejs, express, AWS DynamoDB
 
 ### Part 2 Admin APIs
 
-- Create/Update/Delete Tournament: http://localhost:3001/api/tournament/:id
-- Create/Update/Delete Games: http://localhost:3001/api/game/:id
-- Create/Update/Delete Teams: http://localhost:3001/api/teamStanding/:id
+- Create/Update/Delete Tournament: http://localhost:3001/api/tournament/:id?token=admin
+- Create/Update/Delete Games: http://localhost:3001/api/game/:id?token=admin
+- Create/Update/Delete Teams: http://localhost:3001/api/teamStanding/:id?token=admin
 
 ### Part 3 Server Side Jobs
 
