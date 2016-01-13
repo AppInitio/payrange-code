@@ -232,10 +232,10 @@ function _parseTeamStr(str, goalIndex) {
 
 (function main() {
   async.series([
-    //insertTournament,
-    //insertTeams,
-    //insertStandings,
-    insertGames,
+    insertTournament,
+    insertTeams,
+    insertStandings,
+    insertGames
   ], function(err) {
     console.log('Done >>>', err);
   });
